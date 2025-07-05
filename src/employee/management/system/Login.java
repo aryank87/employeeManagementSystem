@@ -40,6 +40,23 @@ public class Login extends JFrame {
         tfPassword.setBounds(150,100,100,30);
         add(tfPassword);
 
+        // buttons
+        bLogin = new JButton("LOGIN");
+        bLogin.setBounds(150, 160, 100,30);
+        bLogin.setFocusable(false);
+        bLogin.setForeground(Color.white);
+        bLogin.setBackground(Color.DARK_GRAY);
+        add(bLogin);
+
+        bBack = new JButton("BACK");
+        bBack.setBounds(150,200,100,30);
+        bBack.setFocusable(false);
+        bBack.setForeground(Color.WHITE);
+        bBack.setBackground(Color.DARK_GRAY);
+        add(bBack);
+
+
+
         setSize(600,300);
         setLocation(450,200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
