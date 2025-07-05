@@ -1,8 +1,10 @@
 package employee.management.system;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener {
 
     JTextField tfUername;
     JPasswordField tfPassword;
@@ -46,6 +48,7 @@ public class Login extends JFrame {
         bLogin.setFocusable(false);
         bLogin.setForeground(Color.white);
         bLogin.setBackground(Color.DARK_GRAY);
+        bLogin.addActionListener(this);
         add(bLogin);
 
         bBack = new JButton("BACK");
@@ -53,9 +56,24 @@ public class Login extends JFrame {
         bBack.setFocusable(false);
         bBack.setForeground(Color.WHITE);
         bBack.setBackground(Color.DARK_GRAY);
+        bBack.addActionListener(this);
         add(bBack);
 
+        // profile pic
+        ImageIcon i11 = new ImageIcon(ClassLoader.getSystemResource("icons/second.jpg"));
+        Image i22 = i11.getImage().getScaledInstance(600,300,Image.SCALE_DEFAULT);
+        ImageIcon i33 = new ImageIcon(i22);
+        JLabel imgg = new JLabel(i33);
+        imgg.setBounds(350,20,600,300);
+        add(imgg);
 
+        // Background Image
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/LoginB.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(600,300,Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel img = new JLabel(i3);
+        img.setBounds(0,0,600,300);
+        add(img);
 
         setSize(600,300);
         setLocation(450,200);
@@ -67,4 +85,13 @@ public class Login extends JFrame {
         new Login();
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == bLogin){
+            System.out.println("loign");
+        }
+        else if(e.getSource() == bBack){
+            System.exit(99);
+        }
+    }
 }
