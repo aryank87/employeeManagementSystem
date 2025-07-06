@@ -2,6 +2,8 @@ package employee.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main_afterlogin extends JFrame {
 
@@ -16,18 +18,36 @@ public class Main_afterlogin extends JFrame {
         addEmployee.setBackground(Color.DARK_GRAY);
         addEmployee.setForeground(Color.white);
         addEmployee.setFocusable(false);
+        addEmployee.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
         viewEmployee = new JButton("View Employee");
         viewEmployee.setBounds(565,270,150,40);
         viewEmployee.setBackground(Color.DARK_GRAY);
         viewEmployee.setForeground(Color.white);
         viewEmployee.setFocusable(false);
+        viewEmployee.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
         removeEmployee = new JButton("Remove Employee");
         removeEmployee.setBounds(440,370,150,40);
         removeEmployee.setBackground(Color.DARK_GRAY);
         removeEmployee.setForeground(Color.white);
         removeEmployee.setFocusable(false);
+        removeEmployee.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
         // i add button below.
 
