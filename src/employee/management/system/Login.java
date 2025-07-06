@@ -2,6 +2,7 @@ package employee.management.system;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import javax.swing.*;
 
 public class Login extends JFrame implements ActionListener {
@@ -88,7 +89,25 @@ public class Login extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == bLogin){
-            System.out.println("loign");
+            try{
+                String username = tfUername.getText();
+                String password = tfPassword.getText();
+
+                conn conn = new conn();
+
+                String query = "select * from login where username = '"+ username + "' and password = '" + password+"'";
+                ResultSet resultSet = conn.statement.executeQuery(query);
+                if(resultSet.next()){
+                    setVisible(false);
+                    new Main_afterlogin();
+                }else {
+                    JOptionPane.showMessageDialog(null, "Invalid username or password");
+                }
+
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
         }
         else if(e.getSource() == bBack){
             System.exit(99);
