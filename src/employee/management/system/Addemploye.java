@@ -192,13 +192,24 @@ public class Addemploye extends JFrame implements ActionListener {
             String dob = ((JTextField) tdob.getDateEditor().getUiComponent()).getText();
             String salary = tsalary.getText();
             String address = taadhar.getText();
+            String aadhar = taadhar.getText();
             String phone = tphone.getText();
             String email = temail.getText();
-            String education = (String) boxeducation.setSelectedItem();
+            String education = (String) boxeducation.getSelectedItem(); 
             String deignation = tdeignation.getText();
             String empId = tempid.getText();
 
+            try{
 
+                conn c = new conn();
+                String query = "insert into employee values('"+name+"', '"+fname+"', '"+dob+"', '"+salary+"', '"+address+"', '"+phone+"', '"+email+"', '"+education+"', '"+deignation+"', '"+aadhar+"', '"+empId+"')";
+                c.statement.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "Details added successfully");
+                setVisible(false);
+                new Main_afterlogin();
+            }catch (Exception E){
+                E.printStackTrace();
+            }
 
         }else if(e.getSource() == back){
 
