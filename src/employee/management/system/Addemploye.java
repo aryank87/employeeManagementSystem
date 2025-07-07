@@ -17,6 +17,9 @@ public class Addemploye extends JFrame implements ActionListener {
      JLabel tempid;
     JDateChooser tdob;
 
+    //button
+    JButton add, back;
+
     JComboBox boxeducation;
 
     Addemploye(){
@@ -148,7 +151,27 @@ public class Addemploye extends JFrame implements ActionListener {
         tempid = new JLabel(""+number);
         tempid.setBounds(200,400,150,30);
         tempid.setFont(new Font("SAN_SERIF", Font.BOLD,20));
+        tempid.setForeground(Color.RED);
         add(tempid);
+
+        // buttons
+
+        // Add button
+        add = new JButton("ADD");
+        add.setBounds(450,550,150,40);
+        add.setBackground(Color.darkGray);
+        add.setForeground(Color.white);
+        add.addActionListener(this);
+        add.setFocusable(false);
+        add(add);
+
+        back = new JButton("BACK");
+        back.setBounds(250,550,150,40);
+        back.setBackground(Color.darkGray);
+        back.setFocusable(false);
+        back.setForeground(Color.white);
+        back.addActionListener(this);
+        add(back);
 
 
         setSize(900,700);
@@ -163,6 +186,22 @@ public class Addemploye extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == add){
+            String name = tname.getText();
+            String fname = tfname.getText();
+            String dob = ((JTextField) tdob.getDateEditor().getUiComponent()).getText();
+            String salary = tsalary.getText();
+            String address = taadhar.getText();
+            String phone = tphone.getText();
+            String email = temail.getText();
+            String education = (String) boxeducation.setSelectedItem();
+            String deignation = tdeignation.getText();
+            String empId = tempid.getText();
 
+
+
+        }else if(e.getSource() == back){
+
+        }
     }
 }
