@@ -21,7 +21,7 @@ public class Main_afterlogin extends JFrame {
         addEmployee.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new Addemploye();
             }
         });
 

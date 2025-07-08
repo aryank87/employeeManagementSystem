@@ -206,13 +206,14 @@ public class Addemploye extends JFrame implements ActionListener {
                 c.statement.executeUpdate(query);
                 JOptionPane.showMessageDialog(null, "Details added successfully");
                 setVisible(false);
-                new Main_afterlogin();
+
             }catch (Exception E){
                 E.printStackTrace();
             }
 
         }else if(e.getSource() == back){
-
+            new Main_afterlogin();
+            setVisible(false);
         }
     }
 }
